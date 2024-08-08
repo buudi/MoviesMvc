@@ -11,9 +11,4 @@ public class MyBootcampDbContext : DbContext
     {
         optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=MyBootcamp;Trusted_Connection=True;TrustServerCertificate=True;");
     }
-
-    public List<Movie> GetInitialMovies()
-    {
-        return Movies.ToList();
-    }
 }
