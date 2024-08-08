@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MoviesMvc.Models.Movie>
+
+@{
+    ViewData["Title"] = "Fancy Movie List";
+    ViewData["Description"] = "using  cards instead of a table to list the movies, isn't that fancy!";
+}
+
+<h1>@ViewData["Title"]</h1>
+<h6>@ViewData["Description"]</h6>
+
+<div class="container">
+    <div class="row">
+        @foreach (var movie in Model)
+        {
+            <div class="col-md-4 mb-4">
+                @(await Html.PartialAsync("_MovieCard", movie))
+            </div>
+        }
+    </div>
+</div>

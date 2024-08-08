@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<MoviesMvc.Models.Movie>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,39 +9,39 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Director</th>
-            <th scope="col">Release Year</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Price</th>
+
+            <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Title)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Director)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.ReleaseYear)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Genre)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Inception</td>
-            <td>Christopher Nolan</td>
-            <td>2010</td>
-            <td>Sci-fi/Action</td>
-            <td>24.99</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Inception</td>
-            <td>Christopher Nolan</td>
-            <td>2010</td>
-            <td>Sci-fi/Action</td>
-            <td>24.99</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Inception</td>
-            <td>Christopher Nolan</td>
-            <td>2010</td>
-            <td>Sci-fi/Action</td>
-            <td>24.99</td>
-        </tr>
+        @foreach(var movie in Model)
+        {
+           <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.Director)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.ReleaseYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => movie.Price)
+                </td>
+           </tr>
+        }
     </tbody>
 </table>
 

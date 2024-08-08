@@ -1,0 +1,17 @@
+﻿@model MoviesMvc.Models.Movie
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/Images/movie-poster.webp" alt="Movie Poster">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <ul>
+            <li>Movie ID: @Model.Id</li>
+            <li>Director: @Model.Director</li>
+            <li>ReleaseYear: @Model.ReleaseYear</li>
+            <li>Genre: @Model.Genre</li>
+            <li>Price: @Model.Price</li>
+        </ul>
+        <p class="card-text">This movie is amazing, you should buy and watch it, trust me!.</p>
+        <a href="#" class="btn btn-primary">Buy Movie!</a>
+    </div>
+</div>

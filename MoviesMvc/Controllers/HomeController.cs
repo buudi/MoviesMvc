@@ -23,6 +23,18 @@ public class HomeController : Controller
         return View();
     }
 
+    //public IActionResult Experimental()
+    //{
+    //    return View();
+    //}
+    public IActionResult Experimental(string name, int numTimes = 10)
+    {
+        ViewData["Message"] = "Hello " + name;
+        ViewData["NumTimes"] = numTimes;
+        return View();
+    }
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
